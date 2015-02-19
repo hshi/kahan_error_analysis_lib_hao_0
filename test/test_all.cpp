@@ -1,9 +1,11 @@
 #include "error_analysis.h"
 #include "kahan.h"
+#include <iostream>
 
 #ifdef MPI_HAO
 #include <mpi.h>
 #endif
+using namespace std;
 
 void error_analysis_test();
 void kahandata_classtest();
@@ -18,6 +20,7 @@ int main(int argc, char** argv)
 
     if(rank==0)
     {
+        cout<<"\n\n\n=======Testing======="<<endl;
         kahandata_classtest();
         error_analysis_test();
     }
