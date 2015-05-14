@@ -30,7 +30,8 @@ test/runtest: lib/$(LIB) $(TESTOBJS)
 
 lib/$(LIB): $(SRCOBJS)
 	ar -rv $(LIB) $(SRCOBJS)
-	rm -rf lib/$(LIB)
+	rm -rf lib
+	mkdir lib
 	mv $(LIB) lib
 
 check:
@@ -40,7 +41,7 @@ rmdat:
 	rm -f *.dat
 
 clean:
-	rm -rf lib/$(LIB)
+	rm -rf lib
 	rm -rf $(SRCOBJS)
 	rm -rf test/runtest
 	rm -rf $(TESTOBJS)
@@ -54,6 +55,7 @@ src/%.o :src/%.cpp
 
 test/%.o :test/%.cpp
 	$(CC) $(FLAGSALL) -c -o $@ $<
+
 
 define OBJECT_DEPENDS_ON_CORRESPONDING_HEADER
     $(1) : ${1:src/%.o=inc/%.h}
