@@ -1,5 +1,5 @@
-#ifndef ERR_ANAL_HAO
-#define ERR_ANAL_HAO
+#ifndef ERR_ANAL_HAO_H
+#define ERR_ANAL_HAO_H
 
 #include <iostream>
 #include <vector>

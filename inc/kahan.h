@@ -1,5 +1,5 @@
-#ifndef KAHANDATA_HAO
-#define KAHANDATA_HAO
+#ifndef KAHANDATA_HAO_H
+#define KAHANDATA_HAO_H
 #include <iostream>
 
 template<class T> class KahanData
