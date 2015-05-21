@@ -2,3 +2,5 @@ kahan_error_analysis_lib_hao
 ============================
 
 The c++ kahan error analysis library, it can be used to calculate the error bars and do the kahan summation.
+
+This project is licensed under the terms of the MIT license.
