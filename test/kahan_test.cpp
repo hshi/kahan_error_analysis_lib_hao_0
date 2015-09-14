@@ -22,12 +22,20 @@ void kahandata_classtest()
     KahanData<double> ksum3=ksum2;
     if((abs(ksum3.sum-0.2)<1e-14) && (abs(ksum3.c-0)<1e-14)) {cout<<"Kahandata passed the copy construction test! \n";}
     else {cout<<"WARNING!!!!!!!!!Kahandata failed the copy construction test! \n";}
+
    
     // copy assigment
     ksum3.c=1.2;ksum1=ksum3;
     if((abs(ksum1.sum-0.2)<1e-14) && (abs(ksum1.c-1.2)<1e-14)) {cout<<"Kahandata passed the copy assigment test! \n";}
     else {cout<<"WARNING!!!!!!!!!Kahandata failed the copy assigment test! \n";}
-   
+
+
+    // copy assigment for double
+    ksum3=2.8;
+    if((abs(ksum3.sum-2.8)<1e-14) && (abs(ksum3.c-0.0)<1e-14)) {cout<<"Kahandata passed the copy assigment (double) test! \n";}
+    else {cout<<"WARNING!!!!!!!!!Kahandata failed the copy assigment (double) test! \n";}
+
+
     //  +=
     KahanData<double> ksum4;ksum4+=0.5;
     if((abs(ksum4.sum-0.5)<1e-14) && (abs(ksum4.c-0)<1e-14)) {cout<<"Kahandata passed the += test! \n";}

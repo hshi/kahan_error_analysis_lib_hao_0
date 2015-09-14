@@ -23,6 +23,7 @@ template<class T> class KahanData
       ~KahanData(){}
    
     //copy-assigment
+    KahanData<T> operator  = (const T & x) {sum=x; c=0; return *this;}
     KahanData<T> operator  = (const KahanData<T> & x) {sum=x.sum;c=x.c;return *this;}
    
     //+=
