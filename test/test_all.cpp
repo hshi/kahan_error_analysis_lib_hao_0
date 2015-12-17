@@ -9,6 +9,7 @@ using namespace std;
 
 void error_analysis_test();
 void kahandata_classtest();
+void calculate_mean_err_between_thread_test();
 
 int main(int argc, char** argv)
 {
@@ -24,6 +25,8 @@ int main(int argc, char** argv)
         kahandata_classtest();
         error_analysis_test();
     }
+
+    calculate_mean_err_between_thread_test();
 
 #ifdef MPI_HAO
     MPI_Finalize();
