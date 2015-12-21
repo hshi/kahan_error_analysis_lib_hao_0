@@ -1,6 +1,10 @@
 #include <iostream>
 #include "error_analysis.h"
 
+#ifdef MPI_HAO
+#include <mpi.h>
+#endif
+
 using namespace std;
 
 //============
@@ -224,24 +228,27 @@ void get_factors_test()
 
 void error_analysis_test()
 {
-    get_factors_test();
-    cout<<"\n\n";
+    int rank=0;
+#ifdef MPI_HAO
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+#endif
+
+    if(rank==0)
+    {
+        get_factors_test();
+        cout<<"\n";
    
-    get_average_err_pointer_test();
-    error_analysis_pointer_test();
-    error_analysis_blk_pointer_test();
-    error_analysis_blk_loop_pointer_test();
-    cout<<"\n\n";
+        get_average_err_pointer_test();
+        error_analysis_pointer_test();
+        error_analysis_blk_pointer_test();
+        error_analysis_blk_loop_pointer_test();
+        cout<<"\n";
    
-    get_average_err_vector_test();
-    error_analysis_vector_test();
-    error_analysis_blk_vector_test();
-    error_analysis_blk_loop_vector_test();
-    cout<<"\n\n";
+        get_average_err_vector_test();
+        error_analysis_vector_test();
+        error_analysis_blk_vector_test();
+        error_analysis_blk_loop_vector_test();
+        cout<<"\n";
+    }
     
 }
-
-/*int main()
-{
-    error_analysis_test();
-}*/

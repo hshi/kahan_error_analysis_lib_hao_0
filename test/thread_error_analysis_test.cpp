@@ -73,6 +73,13 @@ void calculate_mean_err_between_thread_vector_test()
 
 void calculate_mean_err_between_thread_test()
 {
+    int rank=0;
+#ifdef MPI_HAO
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+#endif
+
     calculate_mean_err_between_thread_complexdouble_test();
     calculate_mean_err_between_thread_vector_test();
+
+    if(rank==0) cout<<"\n";
 }

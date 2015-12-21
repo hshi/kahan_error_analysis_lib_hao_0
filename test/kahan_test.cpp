@@ -3,6 +3,11 @@
 #include <cmath>
 #include <cstdlib>
 #include <limits>
+
+#ifdef MPI_HAO
+#include <mpi.h>
+#endif
+
 #include "kahan.h"
 
 using namespace std;
@@ -55,12 +60,20 @@ void kahandata_classtest()
     cout<<setprecision(18)<<"Use Naive sum: "<<sum_naive-499992004.99992<<endl;
     if(abs(ksum5.sum-499992004.99992)<1e-6) {cout<<"Kahandata passed the sum test! \n";}
     else {cout<<"WARNING!!!!!!!!!Kahandata failed the sum test! \n";}
-   
-    cout<<"\n \n";
 }
 
-/*int main()
+
+void kahan_test()
 {
- kahandata_classtest();
- return 0;
-}*/
+    int rank=0;
+#ifdef MPI_HAO
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+#endif
+
+    if(rank==0)
+    {
+        kahandata_classtest();
+    }
+
+    if(rank==0) cout<<"\n";
+}
