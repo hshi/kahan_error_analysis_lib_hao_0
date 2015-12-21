@@ -1,4 +1,4 @@
-set(kahanerr_test_srcs error_analysis_test.cpp  kahan_test.cpp test_all.cpp)
+set(kahanerr_test_srcs error_analysis_test.cpp thread_error_analysis_test.cpp kahan_test.cpp test_all.cpp)
 
 add_executable(kahanerrtest ${kahanerr_test_srcs})
 
