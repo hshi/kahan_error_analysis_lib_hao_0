@@ -1,3 +1,3 @@
-set(header error_analysis.h thread_error_analysis.h kahan.h)
+file(GLOB header "*.h")
 
 install(FILES ${header}  DESTINATION include)

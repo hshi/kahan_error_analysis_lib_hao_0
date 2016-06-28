@@ -1,7 +1,9 @@
-set(kahanerr_test_srcs error_analysis_test.cpp thread_error_analysis_test.cpp kahan_test.cpp test_all.cpp)
+set(test_exe kahanerrtest)
 
-add_executable(kahanerrtest ${kahanerr_test_srcs})
+file(GLOB test_srcs "*.cpp")
 
-target_link_libraries(kahanerrtest kahanerrhao)
+add_executable(${test_exe} ${test_srcs})
 
-install(TARGETS kahanerrtest  DESTINATION test)
+target_link_libraries(${test_exe} kahanerrhao)
+
+install(TARGETS ${test_exe}  DESTINATION test)

@@ -1,5 +1,7 @@
-set(kahanerr_srcs error_analysis.cpp thread_error_analysis.cpp)
+set(src_lib kahanerrhao)
 
-add_library(kahanerrhao STATIC ${kahanerr_srcs})
+file(GLOB srcs "*.cpp")
 
-install(TARGETS kahanerrhao DESTINATION lib)
+add_library(${src_lib} STATIC ${srcs})
+
+install(TARGETS ${src_lib}  DESTINATION lib)
