@@ -32,8 +32,8 @@ template<class T> class KahanData
         //We can not use it because "volatile std::complex" does not support well
         //volatile T  y = add-c;        // volatile here is to avoid complier's agressive optimazation
         //volatile T  t = sum+y;        // otherwise, compiler might set c to zero directly
-                   T  y = add-c;        
-                   T  t = sum+y;        
+                   T  y = add-c;
+                   T  t = sum+y; 
                     c = (t-sum)-y;
                   sum = t;
         return *this;
