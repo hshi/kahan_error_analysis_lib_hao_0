@@ -25,8 +25,8 @@ void calculate_mean_err_between_thread_complexdouble_test()
          size_t flag=0;
          if( abs(mean_exact-mean)>1e-12 ) flag++;
          if( abs(err_exact-err)>1e-12 ) flag++;
-         if(flag==0) cout<<"Calculate_mean_err_between_thread passed complexdouble test! \n";
-         else cout<<"WARNING!!!!!!!!! Calculate_mean_err_between_thread failed complexdouble test! \n";
+         if(flag==0) cout<<"PASSED! Calculate_mean_err_between_thread passed complexdouble test!"<<endl;
+         else cout<<"WARNING!!!!!!!!! Calculate_mean_err_between_thread failed complexdouble test!"<<endl;
      }
  
 }
@@ -64,8 +64,8 @@ void calculate_mean_err_between_thread_vector_test()
             if( abs(err_exact[i_array]-err[i_array])>1e-12 ) flag++;
             //cout<<err_exact[i_array]<<" "<<err[i_array]<<endl;
          }
-         if(flag==0) cout<<"Calculate_mean_err_between_thread passed vector test! \n";
-         else cout<<"WARNING!!!!!!!!! Calculate_mean_err_between_thread failed vector test! \n";
+         if(flag==0) cout<<"PASSED! Calculate_mean_err_between_thread passed vector test!"<<endl;
+         else cout<<"WARNING!!!!!!!!! Calculate_mean_err_between_thread failed vector test!"<<endl;
      }
  
 }
@@ -81,5 +81,5 @@ void calculate_mean_err_between_thread_test()
     calculate_mean_err_between_thread_complexdouble_test();
     calculate_mean_err_between_thread_vector_test();
 
-    if(rank==0) cout<<"\n";
+    if(rank==0) cout<<" "<<endl;
 }
