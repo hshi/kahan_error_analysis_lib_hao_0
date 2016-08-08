@@ -8,9 +8,6 @@
 #include "kahan.h"
 
 void get_factors(const size_t n, std::vector<size_t>& fact);
-void double_error_analysis_file();
-void complex_double_error_analysis_file();
-
 
 //================================================================================================
 //For pointer: get_average, get_error, error_analysis, error_analysis_blk, error_analysis_blk_loop
