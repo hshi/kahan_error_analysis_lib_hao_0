@@ -35,7 +35,7 @@ template<class T> void get_err(const size_t L, const std::complex<T>* array, con
 {
     if(L==1) {err=0;return;}
     KahanData<T> ksum;
-    for(size_t i=0; i<L; i++) ksum+=norm(array[i]-mean);
+    for(size_t i=0; i<L; i++) ksum+=std::norm(array[i]-mean);
     err=ksum.sum/static_cast<T>(L);    //get variance
     err=sqrt(err/static_cast<T>(L-1)); //get standard diviation of mean(QMC error bar)
 }
