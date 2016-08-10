@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    if( argc<3 ) {cout<<"Error!!!!! Need input file name!"<<endl;}
+    if( argc<3 ) {cout<<"Error!!!!! Need input/out file name! Example: ./complex_double_error_analysis input output"<<endl;}
     string in_filename  = argv[1];
     string out_filename = argv[2];
 
