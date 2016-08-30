@@ -1,6 +1,14 @@
 set(test_exe kahanerrtest)
 
-file(GLOB test_srcs "*.cpp")
+set(test_srcs
+        ../inc/error_analysis.h
+        ../inc/kahan.h
+        ../inc/thread_error_analysis.h
+        error_analysis_test.cpp
+        kahan_test.cpp
+        test_all.cpp
+        thread_error_analysis_test.cpp
+        )
 
 add_executable(${test_exe} ${test_srcs})
 

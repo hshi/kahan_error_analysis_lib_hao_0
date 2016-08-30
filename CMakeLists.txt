@@ -9,8 +9,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "~/lib/Modules")
 add_definitions(${COMPILER_EXTRA_DEF})
 
 #For c++ flag
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")  
-#set(CMAKE_CXX_FLAGS "-Wall -O3 -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(inc)
 

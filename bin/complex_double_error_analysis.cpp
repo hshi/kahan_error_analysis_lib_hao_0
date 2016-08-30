@@ -1,11 +1,9 @@
-#include <math.h>
 #include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <complex>
 #include <iomanip>
 #include "error_analysis.h"
-#include "kahan.h"
 
 using namespace std;
 
